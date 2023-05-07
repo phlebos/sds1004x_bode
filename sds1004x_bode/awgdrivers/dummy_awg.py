@@ -4,7 +4,7 @@ Created on Apr 24, 2018
 @author: 4x1md
 '''
 
-from base_awg import BaseAWG
+from .base_awg import BaseAWG
 
 AWG_ID = "Dummy AWG"
 

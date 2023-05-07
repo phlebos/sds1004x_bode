@@ -6,11 +6,12 @@ Created on November 20, 2019
 Driver for FeelTech FY6600 AWG.
 '''
 
+
 import serial
 import time
-from base_awg import BaseAWG
-import constants
-from exceptions import UnknownChannelError
+from .base_awg import BaseAWG
+from . import constants
+from .exceptions import UnknownChannelError
 
 # Port settings constants
 BAUD_RATE = 115200
@@ -52,8 +53,8 @@ class FY6600(BaseAWG):
         self.ser.close()
         
     def send_command(self, cmd):
-        self.ser.write(cmd)
-        self.ser.write(EOL)
+        self.ser.write(cmd.encode())
+        self.ser.write(EOL.encode())
         time.sleep(SLEEP_TIME)
         
     def initialize(self):
@@ -240,4 +241,4 @@ class FY6600(BaseAWG):
         self.v_out_coeff[channel-1] = v_out_coeff
     
 if __name__ == '__main__':
-    print "This module shouldn't be run. Run awg_tests.py instead."
+    print("This module shouldn't be run. Run awg_tests.py instead.")
