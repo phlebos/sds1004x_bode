@@ -1,6 +1,8 @@
 # Siglent SDS1004X-E Bode Plot
 Bode plot with Siglent SDS1004X-E oscilloscopes and a non-siglent AWG.
 
+The repo contains a version that has been ported to python 3.  It has only been tested with FY8300 feeltech using the fy6600 driver and works for my purposes.
+
 ## Overview
 At a certain point after getting the SDG1204X-E oscilloscope I started to wonder if it might be possible to use the Bode plot function with a non-Siglent waveform generator. After some hours of researching and reverse engineering I wrote this Python program which is a small server which emulates Siglent arbitrary waveform generator.
 
